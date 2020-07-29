@@ -7,7 +7,6 @@ export default function TodoList({ todos }) {
     return (
         <div>
             {todos.map( todo => {
-                debugger;
                 return <Todo key={todo.id} todo={todo.name}/>
             })}
         </div>

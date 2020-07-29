@@ -1,6 +1,3 @@
-
-
-
 const todoItems = [
     {
       id: 1,
@@ -13,4 +10,5 @@ const todoItems = [
       completed: "No"
     }
   ];
+
   export default todoItems;

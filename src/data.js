@@ -2,12 +2,12 @@ const todoItems = [
     {
       id: 1,
       name: "finish this project!!",
-      completed: "yes"
+      complete: true
     },
     {
       id: 2,
       name: "Get excited",
-      completed: "No"
+      complete: false
     }
   ];
 

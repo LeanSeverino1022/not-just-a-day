@@ -30,6 +30,9 @@ function App () {
     setTodos(prevTodos => {
         return [...prevTodos, { name: name, id:uuidv4 (), complete:false}];
     });
+
+    todoNameRef.current.value = '';
+    todoNameRef.current.focus();
   }
 
   function toggleTodo(id) {
@@ -40,16 +43,25 @@ function App () {
   }
 
   function clearTodos () {
-    setTodos([]);
+    const newTodos = todos.filter(todo => !todo.complete);
+
+    setTodos( newTodos );
+  }
+
+  function renderLeftTodoText() {
+
+    const leftTodo = todos.filter( todo => !todo.complete).length;
+
+    return leftTodo ? leftTodo + ' left to do' : "All done! Great job!";
   }
 
   return (
     <React.Fragment>
       <TodoList todos={todos} toggleTodo={toggleTodo}/>
-      <input type='text' ref={todoNameRef} />
+      <input autofocus="true" type='text' ref={todoNameRef} />
       <button onClick={addTodoItem}>Add Todo</button>
       <button onClick={clearTodos}>Clear Completed Todos</button>
-      <div>0 left to do</div>
+      <div>{renderLeftTodoText()}</div>
     </React.Fragment>
   )
 }

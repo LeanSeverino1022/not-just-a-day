@@ -58,7 +58,7 @@ function App () {
   return (
     <React.Fragment>
       <TodoList todos={todos} toggleTodo={toggleTodo}/>
-      <input autofocus="true" type='text' ref={todoNameRef} />
+      <input autoFocus={true} type='text' ref={todoNameRef} />
       <button onClick={addTodoItem}>Add Todo</button>
       <button onClick={clearTodos}>Clear Completed Todos</button>
       <div>{renderLeftTodoText()}</div>

@@ -42,6 +42,13 @@ function App () {
     setTodos(newTodos);
   }
 
+  function triggerAddTodo(e) {
+    //what would trigger the addTodoItem
+    if (e.key === 'Enter') {
+      addTodoItem();
+    }
+  }
+
   function clearTodos () {
     const newTodos = todos.filter(todo => !todo.complete);
 
@@ -61,7 +68,7 @@ function App () {
       <div className="border-2 p-4 w-full lg:w-3/4 lg:max-w-lg">
         <TodoList todos={todos} toggleTodo={toggleTodo}/>
         <div className="flex mt-4 mb-8">
-          <input className="border py-2 px-3 text-grey-dark mr-2 w-full" placeholder="What essential thing you need to do?" autoFocus={true} type='text' ref={todoNameRef} />
+          <input onKeyUp={triggerAddTodo} className="border py-2 px-3 text-grey-dark mr-2 w-full" placeholder="What essential thing you need to do?" autoFocus={true} type='text' ref={todoNameRef} />
           <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={addTodoItem}>Add</button>
         </div>
 

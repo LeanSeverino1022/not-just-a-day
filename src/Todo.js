@@ -10,7 +10,7 @@ export default function Todo({todo, toggleTodo}) {
         <div>
             <label>
                 <input type="checkbox" checked={todo.complete} onChange={handleTodoStatus} />
-                <span className="text-2xl">{todo.name}</span>
+                <span className="text-2xl ml-2">{todo.name}</span>
            </label>
         </div>
     )

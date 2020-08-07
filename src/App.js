@@ -56,13 +56,18 @@ function App () {
   }
 
   return (
-    <React.Fragment>
-      <TodoList todos={todos} toggleTodo={toggleTodo}/>
-      <input autoFocus={true} type='text' ref={todoNameRef} />
-      <button onClick={addTodoItem}>Add Todo</button>
-      <button onClick={clearTodos}>Clear Completed Todos</button>
-      <div>{renderLeftTodoText()}</div>
-    </React.Fragment>
+    <div className="flex items-center justify-center h-screen">
+
+      <div className="border-2 p-4 w-full lg:w-3/4 lg:max-w-lg">
+        <TodoList todos={todos} toggleTodo={toggleTodo}/>
+        <div className="flex mt-4 mb-8">
+          <input className="border py-2 px-3 text-grey-dark mr-2 w-full" placeholder="What essential thing you need to do?" autoFocus={true} type='text' ref={todoNameRef} />
+          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={addTodoItem}>Add</button>
+        </div>
+
+        <div>{renderLeftTodoText()}  <button className="ml-4 bg-orange-500 hover:bg-orange-700 text-white font-bold px-1 rounded mr-2" onClick={clearTodos}>Clear Completed Todos</button></div>
+       </div>{}
+    </div>
   )
 }
 

@@ -1,4 +1,5 @@
 {
+  "homepage": "http://LeanSeverino1022.github.io/not-just-a-day",
   "name": "not-just-a-day",
   "version": "0.1.0",
   "private": true,
@@ -16,9 +17,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "postcss src/assets/tailwind.css -o src/assets/main.css",
+    "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build:css": "postcss src/assets/tailwind.css -o src/assets/main.css"
+
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
+
 }

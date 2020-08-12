@@ -72,3 +72,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 I'm not yet an expert with modern dev tools / build tools so I'll just wghat I added here after create-react-app
 1. added tailwind to the project - https://www.notion.so/React-app-add-tailwind-css-and-postcss-stuff-to-react-e1fb69eea4d0487dae8aca24982f5a02
 2.[added gh-pages so I cand deploy to github](https://blog.usejournal.com/how-to-deploy-your-react-app-into-github-pages-b2c96292b18e?fbclid=IwAR3yxwRz7XFsNEi2hUxbcj0qHBJMuOpv2ltuH0ywoQsTZIpE8TodqW77JCw&gi=34f6c65ac2f)
+
+#just a test

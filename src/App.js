@@ -63,9 +63,11 @@ function App () {
   }
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <>
+    <div className="page-bg"></div>
 
-      <div className="border-2 p-4 w-full lg:w-3/4 lg:max-w-lg">
+    <div className="flex flex-col h-screen">
+      <div className="border-2 p-4 w-full lg:w-1/4 lg:max-w-lg bg-gray-300 bg-opacity-75">
         <TodoList todos={todos} toggleTodo={toggleTodo}/>
         <div className="flex mt-4 mb-8">
           <input onKeyUp={triggerAddTodo} className="border py-2 px-3 text-grey-dark mr-2 w-full" placeholder="What essential thing you need to do?" autoFocus={true} type='text' ref={todoNameRef} />
@@ -75,6 +77,7 @@ function App () {
         <div>{renderLeftTodoText()}  <button className="ml-4 bg-orange-500 hover:bg-orange-700 text-white font-bold px-1 rounded mr-2" onClick={clearTodos}>Clear Completed Todos</button></div>
        </div>{}
     </div>
+    </>
   )
 }
 

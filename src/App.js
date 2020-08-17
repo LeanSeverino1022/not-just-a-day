@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import TodoList from './TodoList';
 import todosData from './data';
+import HeaderButtons from './HeaderButtons';
 import { v4 as uuidv4 } from 'uuid';
 
 const LOCAL_STORAGE_KEY = 'oneDayApp.todos';
@@ -65,6 +66,8 @@ function App () {
   return (
     <>
     <div className="page-bg"></div>
+
+    <HeaderButtons/>
 
     <div className="flex flex-col h-screen">
       <div className="border-2 p-4 w-full lg:w-1/4 lg:max-w-lg bg-gray-300 bg-opacity-75">

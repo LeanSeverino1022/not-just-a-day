@@ -16,12 +16,14 @@ function App () {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
 
     if (storedTodos) setTodos(storedTodos);
+
   }, [])
 
   //when something changes, do something
   useEffect(_=>{
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos])
+
 
   function addTodoItem () {
 
@@ -80,6 +82,10 @@ function App () {
         <div>{renderLeftTodoText()}  <button className="ml-4 bg-orange-500 hover:bg-orange-700 text-white font-bold px-1 rounded mr-2" onClick={clearTodos}>Clear Completed Todos</button></div>
        </div>{}
     </div>
+
+
+
+
     </>
   )
 }

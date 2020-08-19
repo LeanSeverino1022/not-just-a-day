@@ -10,7 +10,7 @@ function Todo({todo, toggleTodo, order}) {
 
     return (
         <div>
-            <label className="flex items-center">
+            <label className="flex items-center ">
                 <input type="checkbox" checked={todo.complete} onChange={handleTodoStatus} />
                 <span className="text-2xl ml-2">{todo.name}</span>
                 { taskPriorityUI }

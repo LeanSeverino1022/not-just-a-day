@@ -605,21 +605,6 @@ video {
   }
 }
 
-.headerBtn {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  width: auto;
-  margin-right: 1rem;
-  cursor: pointer;
-  border-radius: 9999px;
-}
-
-.headerBtn:hover {
-  opacity: 0.75;
-}
-
 .space-y-0 > :not(template) ~ :not(template) {
   --space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--space-y-reverse)));
@@ -69748,3 +69733,4 @@ video {
     animation: bounce 1s infinite;
   }
 }
+

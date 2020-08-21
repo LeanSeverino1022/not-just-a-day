@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/not-just-a-day/static/css/main.30d31bea.chunk.css",
+    "main.js": "/not-just-a-day/static/js/main.c255219e.chunk.js",
+    "main.js.map": "/not-just-a-day/static/js/main.c255219e.chunk.js.map",
+    "runtime-main.js": "/not-just-a-day/static/js/runtime-main.6e2106f5.js",
+    "runtime-main.js.map": "/not-just-a-day/static/js/runtime-main.6e2106f5.js.map",
+    "static/js/2.62a647ce.chunk.js": "/not-just-a-day/static/js/2.62a647ce.chunk.js",
+    "static/js/2.62a647ce.chunk.js.map": "/not-just-a-day/static/js/2.62a647ce.chunk.js.map",
+    "index.html": "/not-just-a-day/index.html",
+    "precache-manifest.e6e5f7825fae17ee97e35a434c024717.js": "/not-just-a-day/precache-manifest.e6e5f7825fae17ee97e35a434c024717.js",
+    "service-worker.js": "/not-just-a-day/service-worker.js",
+    "static/css/main.30d31bea.chunk.css.map": "/not-just-a-day/static/css/main.30d31bea.chunk.css.map",
+    "static/js/2.62a647ce.chunk.js.LICENSE.txt": "/not-just-a-day/static/js/2.62a647ce.chunk.js.LICENSE.txt",
+    "static/media/custom.css": "/not-just-a-day/static/media/bg-image.f94cfda9.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6e2106f5.js",
+    "static/js/2.62a647ce.chunk.js",
+    "static/css/main.30d31bea.chunk.css",
+    "static/js/main.c255219e.chunk.js"
+  ]
+}

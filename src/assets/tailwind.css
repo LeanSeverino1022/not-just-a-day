@@ -2,7 +2,7 @@
 @tailwind components;
 
 .headerBtn {
-    @apply py-5 px-5 w-auto mr-4 cursor-pointer rounded-full;
+    @apply py-5 px-5 w-auto cursor-pointer;
   }
 
 .headerBtn:hover {

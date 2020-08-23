@@ -69,10 +69,12 @@ function App () {
     <>
     <div className="page-bg"></div>
 
+    {/* <div className="bg-green-600 h-screen"></div> */}
+
     <HeaderButtons/>
 
-    <div className="flex flex-col h-screen">
-      <div className="border-2 p-4 w-full lg:w-1/4 lg:max-w-lg bg-gray-300 bg-opacity-75">
+    <div className="w-1/4 flex-col  bg-green-500">
+      <div className="border-2 p-4  flex-1 bg-gray-300 bg-opacity-75">
         <TodoList todos={todos} toggleTodo={toggleTodo}/>
         <div className="flex mt-4 mb-8">
           <input onKeyUp={triggerAddTodo} className="border py-2 px-3 text-grey-dark mr-2 w-full" placeholder="What essential thing you need to do?" autoFocus={true} type='text' ref={todoNameRef} />
@@ -80,12 +82,8 @@ function App () {
         </div>
 
         <div>{renderLeftTodoText()}  <button className="ml-4 bg-orange-500 hover:bg-orange-700 text-white font-bold px-1 rounded mr-2" onClick={clearTodos}>Clear Completed Todos</button></div>
-       </div>{}
+      </div>
     </div>
-
-
-
-
     </>
   )
 }

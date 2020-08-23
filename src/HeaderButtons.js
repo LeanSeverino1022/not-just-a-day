@@ -27,15 +27,17 @@ export default function HeaderButtons() {
     }
 
     return (
-        <div className="flex p-2">
+        <div className="flex">
             {/* buttons */}
-            <div className="header-btns-container">
+            <div className="headerBtn bg-green-700 w-1/5">
                 <TwitterButton />
             </div>
 
-            <div className="headerBtn bg-red-500">Test 1</div>
-            <div className="headerBtn bg-yellow-500">Test 2</div>
-            <div className="headerBtn bg-blue-500">Test 3</div>
+            <div className="headerBtn bg-red-500 w-1/5">Test 1</div>
+            <div className="headerBtn bg-yellow-500 w-1/5">Test 2</div>
+            <div className="headerBtn bg-blue-500 w-1/5">Test 3</div>
+            <div className="headerBtn bg-yellow-500 w-1/5">Test 2</div>
+           
 
         </div>
 

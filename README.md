@@ -73,3 +73,6 @@ I'm not yet an expert with modern dev tools / build tools so I'll just wghat I a
 1. added tailwind to the project - https://www.notion.so/React-app-add-tailwind-css-and-postcss-stuff-to-react-e1fb69eea4d0487dae8aca24982f5a02
 2.[added gh-pages so I cand deploy to github](https://blog.usejournal.com/how-to-deploy-your-react-app-into-github-pages-b2c96292b18e?fbclid=IwAR3yxwRz7XFsNEi2hUxbcj0qHBJMuOpv2ltuH0ywoQsTZIpE8TodqW77JCw&gi=34f6c65ac2f)
 
+npm3. I was getting errors with tailwind and vscode so I used stylelint to solve the issues... This is the guide I followed
+https://www.meidev.co/blog/visual-studio-code-css-linting-with-tailwind/
+

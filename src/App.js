@@ -6,13 +6,13 @@ import { v4 as uuidv4 } from 'uuid';
 
 const LOCAL_STORAGE_KEY = 'oneDayApp.todos';
 
-function App () {
+function App() {
   const [todos, setTodos] = useState(todosData);
 
   const todoNameRef = useRef(null);
 
   //do once, when our component loads
-  useEffect(_=>{
+  useEffect(_ => {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
 
     if (storedTodos) setTodos(storedTodos);
@@ -20,18 +20,18 @@ function App () {
   }, [])
 
   //when something changes, do something
-  useEffect(_=>{
+  useEffect(_ => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos])
 
 
-  function addTodoItem () {
+  function addTodoItem() {
 
     const name = todoNameRef.current.value.trim();
     if (name === '') return;
 
     setTodos(prevTodos => {
-        return [...prevTodos, { name: name, id:uuidv4 (), complete:false}];
+      return [...prevTodos, { name: name, id: uuidv4(), complete: false }];
     });
 
     todoNameRef.current.value = '';
@@ -52,38 +52,64 @@ function App () {
     }
   }
 
-  function clearTodos () {
+  function clearTodos() {
     const newTodos = todos.filter(todo => !todo.complete);
 
-    setTodos( newTodos );
+    setTodos(newTodos);
   }
 
   function renderLeftTodoText() {
 
-    const leftTodo = todos.filter( todo => !todo.complete).length;
+    const leftTodo = todos.filter(todo => !todo.complete).length;
 
     return leftTodo ? leftTodo + ' left to do' : "All done! Great job!";
   }
 
   return (
     <>
-    <div className="page-bg"></div>
+      <div className="page-bg"></div>
 
-    {/* <div className="bg-green-600 h-screen"></div> */}
+      <div className="bg-green-600 h-screen flex flex-col">
 
-    <HeaderButtons/>
+        <div className="w-full">
+          <HeaderButtons />
+        </div>
+        <div className="bg-gray-700 flex-grow flex">
 
-    <div className="w-1/4 flex-col  bg-green-500">
-      <div className="border-2 p-4  flex-1 bg-gray-300 bg-opacity-75">
-        <TodoList todos={todos} toggleTodo={toggleTodo}/>
-        <div className="flex mt-4 mb-8">
-          <input onKeyUp={triggerAddTodo} className="border py-2 px-3 text-grey-dark mr-2 w-full" placeholder="What essential thing you need to do?" autoFocus={true} type='text' ref={todoNameRef} />
-          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={addTodoItem}>Add</button>
+          {/* column todolist */}
+          <div className="w-1/4 flex-grow flex flex-col bg-green-500">
+            <div className="border-2 p-4 flex-grow bg-gray-300 bg-opacity-75">
+              <TodoList todos={todos} toggleTodo={toggleTodo} />
+              <div className="flex mt-4 mb-8">
+                <input onKeyUp={triggerAddTodo} className="border py-2 px-3 text-grey-dark mr-2 w-full" placeholder="What essential thing you need to do?" autoFocus={true} type='text' ref={todoNameRef} />
+                <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={addTodoItem}>Add</button>
+              </div>
+
+              <div>{renderLeftTodoText()}  <button className="ml-4 bg-orange-500 hover:bg-orange-700 text-white font-bold px-1 rounded mr-2" onClick={clearTodos}>Clear Completed Todos</button></div>
+            </div>
+          </div>
+
+          <div className="w-1/4 flex flex-col">
+            <div className="flex-grow border-white mr-1 mb-1 bg-purple-600" ></div>
+            <div className="flex-grow border-white mr-1 mb-1 bg-purple-600" ></div>
+            <div className="flex-grow border-white mr-1 bg-purple-600" ></div>
+          </div>
+
+          <div className="w-1/4 flex flex-col">
+            <div className="flex-grow border-white mb-1 bg-purple-600" ></div>
+            <div className="flex-grow border-white mb-1 bg-purple-600" ></div>
+            <div className="flex-grow border-white bg-purple-600" ></div>
+          </div>
+
+          {/* <div className="w-1/4 flex flex-col bg-gray-300"></div> */}
+
         </div>
 
-        <div>{renderLeftTodoText()}  <button className="ml-4 bg-orange-500 hover:bg-orange-700 text-white font-bold px-1 rounded mr-2" onClick={clearTodos}>Clear Completed Todos</button></div>
       </div>
-    </div>
+
+
+
+
     </>
   )
 }

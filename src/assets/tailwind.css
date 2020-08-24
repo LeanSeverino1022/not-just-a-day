@@ -1,14 +1,11 @@
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 .headerBtn {
-    @apply py-5 px-5 w-auto cursor-pointer;
-  }
-
-.headerBtn:hover {
-    @apply .opacity-75;
+  @apply py-5 flex-grow cursor-pointer;
 }
 
-
-
-@tailwind utilities;
+.headerBtn:hover {
+  @apply .opacity-75;
+}

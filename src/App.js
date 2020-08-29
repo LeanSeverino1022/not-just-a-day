@@ -2,7 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import TodoList from './TodoList';
 import todosData from './data';
 import HeaderButtons from './HeaderButtons';
+import Pomodoro from './Pomodoro';
 import { v4 as uuidv4 } from 'uuid';
+
 
 const LOCAL_STORAGE_KEY = 'oneDayApp.todos';
 
@@ -78,7 +80,7 @@ function App() {
 
           {/* column todolist */}
           <div className="w-1/4 flex-grow flex flex-col bg-green-500">
-            <div className="border-2 p-4 flex-grow bg-gray-300 bg-opacity-75">
+            <div className="border-2 p-4 flex-grow bg-white">
               <TodoList todos={todos} toggleTodo={toggleTodo} />
               <div className="flex mt-4 mb-8">
                 <input onKeyUp={triggerAddTodo} className="border py-2 px-3 text-grey-dark mr-2 w-full" placeholder="What essential thing you need to do?" autoFocus={true} type='text' ref={todoNameRef} />
@@ -90,15 +92,17 @@ function App() {
           </div>
 
           <div className="w-1/4 flex flex-col">
-            <div className="flex-grow border-white mr-1 mb-1 bg-purple-600" ></div>
-            <div className="flex-grow border-white mr-1 mb-1 bg-purple-600" ></div>
-            <div className="flex-grow border-white mr-1 bg-purple-600" ></div>
+            <div className="border-white mr-1 mb-1 bg-primary" >
+              <Pomodoro />
+            </div>
+            <div className="flex-grow border-white mr-1 mb-1 bg-secondary" ></div>
+            <div className="flex-grow border-white mr-1 bg-primary" ></div>
           </div>
 
           <div className="w-1/4 flex flex-col">
-            <div className="flex-grow border-white mb-1 bg-purple-600" ></div>
-            <div className="flex-grow border-white mb-1 bg-purple-600" ></div>
-            <div className="flex-grow border-white bg-purple-600" ></div>
+            <div className="flex-grow border-white mb-1 bg-secondary" ></div>
+            <div className="flex-grow border-white mb-1 bg-primary" ></div>
+            <div className="flex-grow border-white bg-secondary" ></div>
           </div>
 
           {/* <div className="w-1/4 flex flex-col bg-gray-300"></div> */}

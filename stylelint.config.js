@@ -1,6 +1,12 @@
 module.exports = {
   extends: ['stylelint-config-recommended'],
   rules: {
+    "font-family-no-duplicate-names": [
+      true,
+      {
+        ignoreFontFamilyNames:["monospace"],
+      }
+    ],
     "at-rule-no-unknown": [
       true,
       {

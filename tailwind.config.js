@@ -1,7 +1,18 @@
 // tailwind.config.js
 module.exports = {
-    future: {
-      removeDeprecatedGapUtilities: true,
-    },
-    // ...
+  purge: [],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#FDB927',
+        secondary: '#552583',
+      }
+    }
+  },
+  variants: {},
+  plugins: [],
+   future: {
+    removeDeprecatedGapUtilities: true,
+  },
+  // ...
   }

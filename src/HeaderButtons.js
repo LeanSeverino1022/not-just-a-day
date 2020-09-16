@@ -37,7 +37,7 @@ export default function HeaderButtons() {
             <div className="headerBtn bg-yellow-500 w-1/5">Test 2</div>
             <div className="headerBtn bg-blue-500 w-1/5">Test 3</div>
             <div className="headerBtn bg-yellow-500 w-1/5">Test 2</div>
-           
+
 
         </div>
 

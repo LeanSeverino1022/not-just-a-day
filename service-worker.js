@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/not-just-a-day/precache-manifest.e6e5f7825fae17ee97e35a434c024717.js"
+  "/not-just-a-day/precache-manifest.d39aacfb6c0da684be025f78bf918407.js"
 );
 
 self.addEventListener('message', (event) => {

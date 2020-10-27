@@ -4,9 +4,18 @@ import todosData from './data';
 import HeaderButtons from './HeaderButtons';
 import Pomodoro from './Pomodoro';
 import { v4 as uuidv4 } from 'uuid';
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 
 const LOCAL_STORAGE_KEY = 'oneDayApp.todos';
+
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
 
 function App() {
   const [todos, setTodos] = useState(todosData);
@@ -14,10 +23,11 @@ function App() {
   const todoNameRef = useRef(null);
 
   //do once, when our component loads
+  //set storedTodos data from local storage if it exists
   useEffect(_ => {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
 
-    if (storedTodos) setTodos(storedTodos);
+    // if (storedTodos) setTodos(storedTodos);
 
   }, [])
 
@@ -38,6 +48,26 @@ function App() {
 
     todoNameRef.current.value = '';
     todoNameRef.current.focus();
+  }
+
+  // DND
+  function onDragEnd(result) {
+    
+    if (!result.destination) {
+      return;
+    }
+
+    if (result.destination.index === result.source.index) {
+      return;
+    }
+
+    const new_todos = reorder(
+      todos,
+      result.source.index,
+      result.destination.index
+    );
+
+    setTodos( new_todos );
   }
 
   function toggleTodo(id) {
@@ -61,8 +91,8 @@ function App() {
   }
 
   function renderLeftTodoText() {
-
-    const leftTodo = todos.filter(todo => !todo.complete).length;
+    debugger;
+    const leftTodo = [...todos].filter(todo => !todo.complete).length;
 
     return leftTodo ? leftTodo + ' left to do' : "All done! Great job!";
   }
@@ -81,7 +111,16 @@ function App() {
           {/* column todolist */}
           <div className="w-1/4 flex-grow flex flex-col bg-green-500">
             <div className="border-2 p-4 flex-grow bg-white">
-              <TodoList todos={todos} toggleTodo={toggleTodo} />
+              <DragDropContext onDragEnd={onDragEnd}>
+                <Droppable droppableId="list">
+                  {(provided) => (
+                    <div ref={provided.innerRef} {...provided.droppableProps}>
+                      <TodoList todos={todos} toggleTodo={toggleTodo} />
+                      {provided.placeholder}
+                    </div>
+                  )}
+                </Droppable>
+              </DragDropContext>
               <div className="flex mt-4 mb-8">
                 <input onKeyUp={triggerAddTodo} className="border py-2 px-3 text-grey-dark mr-2 w-full" placeholder="What essential thing you need to do?" autoFocus={true} type='text' ref={todoNameRef} />
                 <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={addTodoItem}>Add</button>

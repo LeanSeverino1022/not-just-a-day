@@ -6,6 +6,15 @@ import Pomodoro from './Pomodoro';
 import { v4 as uuidv4 } from 'uuid';
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
+// import images
+//todo: optimize shuffle images stuff later
+//todo: add to a different component image shuffler
+import imageFam0 from './assets/images/dashboard_slide/img_0.jpg';
+import imageFam1 from './assets/images/dashboard_slide/img_1.jpg';
+import imageFam2 from './assets/images/dashboard_slide/img_2.jpg';
+import imageFam3 from './assets/images/dashboard_slide/img_3.jpg';
+
+//Get the right things done. Eliminate the noise
 
 const LOCAL_STORAGE_KEY = 'oneDayApp.todos';
 
@@ -18,7 +27,13 @@ const reorder = (list, startIndex, endIndex) => {
 };
 
 function App() {
+  //set todos from data.js
   const [todos, setTodos] = useState(todosData);
+
+  //image shuffler
+  const [slideImgs, setSlideImg] =  useState([imageFam0, imageFam1, imageFam2, imageFam3]);
+  const [slideIndex, setSlideIndex] = useState(2);
+
 
   const todoNameRef = useRef(null);
 
@@ -27,7 +42,8 @@ function App() {
   useEffect(_ => {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
 
-    // if (storedTodos) setTodos(storedTodos);
+    //if we have todos in our localstorage then use it to replace todosData we set initially
+    if (storedTodos) setTodos(storedTodos);
 
   }, [])
 
@@ -91,30 +107,47 @@ function App() {
   }
 
   function renderLeftTodoText() {
-    debugger;
-    const leftTodo = [...todos].filter(todo => !todo.complete).length;
+
+    const leftTodo = todos.filter(todo => !todo.complete).length;
 
     return leftTodo ? leftTodo + ' left to do' : "All done! Great job!";
   }
 
+  function showNextImage() {
+    debugger;
+    
+    const maxIndex = slideImgs.length;
+
+    if(slideIndex < maxIndex) {
+      setSlideIndex(slideIndex + 1)
+    } else {
+      setSlideIndex(0);
+    }
+
+  }
+
+  // function ()
+
   return (
     <>
-      <div className="page-bg"></div>
 
-      <div className="bg-green-600 h-screen flex flex-col">
+      <div className="wrapper h-screen flex flex-col">
 
+        {/* top row */}
         <div className="w-full">
           <HeaderButtons />
         </div>
-        <div className="bg-gray-700 flex-grow flex">
+
+
+        <main className="flex-grow flex">
 
           {/* column todolist */}
-          <div className="w-1/4 flex-grow flex flex-col bg-green-500">
-            <div className="border-2 p-4 flex-grow bg-white">
+          <div className="col flex flex-col todos-widget">
+            <div className="border-2 p-4 flex-grow todos-widget-wrapper">
               <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="list">
                   {(provided) => (
-                    <div ref={provided.innerRef} {...provided.droppableProps}>
+                    <div style={{border:"red 2px solid"}} ref={provided.innerRef} {...provided.droppableProps}>
                       <TodoList todos={todos} toggleTodo={toggleTodo} />
                       {provided.placeholder}
                     </div>
@@ -130,23 +163,32 @@ function App() {
             </div>
           </div>
 
-          <div className="w-1/4 flex flex-col">
-            <div className="border-white mr-1 mb-1 bg-primary" >
+          <div className="col flex flex-col">
+            {/* row pomodor */}
+            <div className="border-white mr-1 mb-1" >
               <Pomodoro />
             </div>
-            <div className="flex-grow border-white mr-1 mb-1 bg-secondary" ></div>
-            <div className="flex-grow border-white mr-1 bg-primary" ></div>
+            
+            {/* row image shuff */}
+            <div className="border border-white mr-1 mb-1" >
+              {/* todo... make a component */}
+              <img alt="fam img" src={slideImgs[slideIndex]}/>
+              <div className="text-center mt-2"> <button className="p-1 border" onClick={showNextImage}>Next</button></div>
+            </div>
+
           </div>
 
-          <div className="w-1/4 flex flex-col">
-            <div className="flex-grow border-white mb-1 bg-secondary" ></div>
-            <div className="flex-grow border-white mb-1 bg-primary" ></div>
-            <div className="flex-grow border-white bg-secondary" ></div>
+          <div className="col flex flex-col">
+            <div className="flex-grow border border-white mb-1 flex justify-center items-center">
+              <p>Get that<br/><span className="text-6xl two-hundred-text">200</span></p>
+            </div>
+            <div className="flex-grow border border-white mb-1"></div>
+            <div className="flex-grow border border-white"></div>
           </div>
 
           {/* <div className="w-1/4 flex flex-col bg-gray-300"></div> */}
 
-        </div>
+        </main>
 
       </div>
 

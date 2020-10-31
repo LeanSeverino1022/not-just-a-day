@@ -1,8 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import TodoList from './TodoList';
 import todosData from './data';
+
+// widgets
+import TodoList from './TodoList';
 import HeaderButtons from './HeaderButtons';
 import Pomodoro from './Pomodoro';
+
+
 import { v4 as uuidv4 } from 'uuid';
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
@@ -13,6 +17,8 @@ import imageFam0 from './assets/images/dashboard_slide/img_0.jpg';
 import imageFam1 from './assets/images/dashboard_slide/img_1.jpg';
 import imageFam2 from './assets/images/dashboard_slide/img_2.jpg';
 import imageFam3 from './assets/images/dashboard_slide/img_3.jpg';
+import imageKobe from './assets/images/mamba-out.jpg';
+import imageMaki from './assets/images/maki-me.jpg';
 
 //Get the right things done. Eliminate the noise
 
@@ -114,11 +120,9 @@ function App() {
   }
 
   function showNextImage() {
-    debugger;
     
-    const maxIndex = slideImgs.length;
 
-    if(slideIndex < maxIndex) {
+    if(slideIndex < slideImgs.length - 1) {
       setSlideIndex(slideIndex + 1)
     } else {
       setSlideIndex(0);
@@ -141,7 +145,7 @@ function App() {
 
         <main className="flex-grow flex">
 
-          {/* column todolist */}
+          {/* column 1 todolist */}
           <div className="col flex flex-col todos-widget">
             <div className="border-2 p-4 flex-grow todos-widget-wrapper">
               <DragDropContext onDragEnd={onDragEnd}>
@@ -163,17 +167,21 @@ function App() {
             </div>
           </div>
 
+          {/* column 2 */}
           <div className="col flex flex-col">
+
             {/* row pomodor */}
-            <div className="border-white mr-1 mb-1" >
+            <div className="row flex flex-col justify-center border-white mr-1 mb-1" >
               <Pomodoro />
             </div>
             
             {/* row image shuff */}
-            <div className="border border-white mr-1 mb-1" >
-              {/* todo... make a component */}
-              <img alt="fam img" src={slideImgs[slideIndex]}/>
-              <div className="text-center mt-2"> <button className="p-1 border" onClick={showNextImage}>Next</button></div>
+            <div className="row flex-grow border  border-white mr-1 mb-1" >
+              <div class="flex flex-col" style={{height: '100%'}}>
+                {/* todo... make a component */}
+                <img class="slide-img flex-grow" alt="fam img" src={slideImgs[slideIndex]}/>
+                <div className="text-center my-2"> <button className="py-1 px-3 border" onClick={showNextImage}>Next</button></div>
+              </div>
             </div>
 
           </div>
@@ -182,8 +190,12 @@ function App() {
             <div className="flex-grow border border-white mb-1 flex justify-center items-center">
               <p>Get that<br/><span className="text-6xl two-hundred-text">200</span></p>
             </div>
-            <div className="flex-grow border border-white mb-1"></div>
-            <div className="flex-grow border border-white"></div>
+            <div className="flex-grow border border-white mb-1 kobe-widget">
+            <iframe src="https://www.youtube.com/embed/p5gnsAYLFMk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div className="flex-grow border border-white maki-widget">
+              <span class="msg text-white font-bold">FOR U WHO WAS ALWAYS THERE FOR ME.. EVEN WHEN IT WASN'T EASY.</span>
+            </div>
           </div>
 
           {/* <div className="w-1/4 flex flex-col bg-gray-300"></div> */}

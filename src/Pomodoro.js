@@ -64,7 +64,7 @@ export default function Pomodoro() {
 
     return (
         <div>
-            <div className="flex text-center border flex-wrap">
+            <div className="flex text-center flex-wrap">
                 <div className="flex-grow flex flex-col w-full">
                     <p className="py-2">Pomodoro Timer</p>
                     <p className="text-6xl">{timerUi}</p>

@@ -1,11 +1,10 @@
 
+
+
 ## Commands to remember
 
 `npm run start` 
-`npm run build`  
-
-
-## Installed https://github.com/SortableJS/react-sortablejs#installation on 09/12/20
+`npm run build`
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -14,7 +13,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `yarn start`
+### 'yarn start' or 'npm run start'
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -86,4 +85,11 @@ I'm not yet an expert with modern dev tools / build tools so I'll just wghat I a
 
 npm3. I was getting errors with tailwind and vscode so I used stylelint to solve the issues... This is the guide I followed
 https://www.meidev.co/blog/visual-studio-code-css-linting-with-tailwind/
+
+
+
+
+### How to add new images to slide images widget
+- 
+
 

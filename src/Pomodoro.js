@@ -66,12 +66,12 @@ export default function Pomodoro() {
         <div>
             <div className="flex text-center flex-wrap">
                 <div className="flex-grow flex flex-col w-full">
-                    <p className="py-2">Pomodoro Timer</p>
+                    <p className="py-2">Time to work!</p>
                     <p className="text-6xl">{timerUi}</p>
                     {isTimerRunning ? (
-                        <button onClick={resetTimer} className="bg-gray-700 hover:bg-gray-600 text-white inline-block mx-auto mb-2 py-1 px-2">Reset</button>
+                        <button onClick={resetTimer} className="bg-white hover:bg-gray-100 text-black inline-block mx-auto mb-2 py-1 px-2">Reset</button>
                     ) : (
-                            <button onClick={startTimer} className="bg-green-500 hover:bg-green-700 text-white inline-block mx-auto mb-2 py-1 px-2" >Start</button>
+                            <button onClick={startTimer} className="bg-white hover:bg-gray-100 text-black inline-block mx-auto mb-2 py-1 px-2" >Start</button>
                         )}
                 </div>
 

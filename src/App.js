@@ -20,6 +20,7 @@ import imageFam3 from './assets/images/dashboard_slide/img_3.jpg';
 import imageKobe from './assets/images/mamba-out.jpg';
 import imageMaki from './assets/images/maki-me.jpg';
 
+
 //Get the right things done. Eliminate the noise
 
 const LOCAL_STORAGE_KEY = 'oneDayApp.todos';
@@ -74,7 +75,7 @@ function App() {
 
   // DND
   function onDragEnd(result) {
-    
+
     if (!result.destination) {
       return;
     }
@@ -120,7 +121,7 @@ function App() {
   }
 
   function showNextImage() {
-    
+
 
     if(slideIndex < slideImgs.length - 1) {
       setSlideIndex(slideIndex + 1)
@@ -143,10 +144,10 @@ function App() {
         </div>
 
 
-        <main className="flex-grow flex">
+        <main className="flex-grow flex dashboard">
 
           {/* column 1 todolist */}
-          <div className="col flex flex-col todos-widget">
+          <div className="dashboard-col flex flex-col todos-widget">
             <div className="border-2 p-4 flex-grow todos-widget-wrapper">
               <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="list">
@@ -168,7 +169,7 @@ function App() {
           </div>
 
           {/* column 2 */}
-          <div className="col flex flex-col">
+          <div className="dashboard-col flex flex-col">
 
             {/* row pomodor */}
             <div className="row flex flex-col justify-center border-white mr-1 mb-1" >
@@ -186,15 +187,15 @@ function App() {
 
           </div>
 
-          <div className="col flex flex-col">
+          <div className="dashboard-col flex flex-col">
             <div className="flex-grow border border-white mb-1 flex justify-center items-center">
               <p>Get that<br/><span className="text-6xl two-hundred-text">200</span></p>
             </div>
-            <div className="flex-grow border border-white mb-1 kobe-widget">
+            <div className="border border-white mb-1 kobe-widget">
             <iframe src="https://www.youtube.com/embed/p5gnsAYLFMk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div className="flex-grow border border-white maki-widget">
-              <span class="msg text-white font-bold">FOR U WHO WAS ALWAYS THERE FOR ME.. EVEN WHEN IT WASN'T EASY.</span>
+              {/* <span class="msg text-white font-bold">FOR U WHO WAS ALWAYS THERE FOR ME.. EVEN WHEN IT WASN'T EASY.</span> */}
             </div>
           </div>
 
@@ -203,10 +204,6 @@ function App() {
         </main>
 
       </div>
-
-
-
-
     </>
   )
 }

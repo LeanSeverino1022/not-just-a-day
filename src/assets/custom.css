@@ -43,20 +43,21 @@ body {
 }
 
 /* MAIN LAYOUT */
-main .col:nth-child(1) {
+
+.dashboard-col:nth-child(1) {
     width: 100%;
 }
 
-main .col:nth-child(2),
-main .col:nth-child(3) {
+.dashboard-col:nth-child(2),
+.dashboard-col:nth-child(3) {
     display: none;
 }
 
 
-main .col:nth-child(2) .row:nth-child(1) {
+.dashboard-col:nth-child(2) .row:nth-child(1) {
 }
 
-main .col:nth-child(2) .row:nth-child(2) {
+.dashboard-col:nth-child(2) .row:nth-child(2) {
     flex-grow: 1;
 }
 
@@ -89,23 +90,39 @@ main .col:nth-child(2) .row:nth-child(2) {
 }
 
 
+/* Header button component*/
+/* todo: figure out... should I just put it in here or inside another file just for that component */
+.headerBtn {
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.hundred-days-widget {
+    background: #2fa2bc;
+}
+
+.twitter-logo {
+    display: inline;
+    width: 50px;
+    vertical-align: middle;
+}
+
 @media (min-width: 640px) {
 
     /* col 1 todolist */
-    main .col:nth-child(1) {
+    .dashboard-col:nth-child(1) {
         width: 50%;
     }
     
     /* COL 2 */
-    main .col:nth-child(2) {
+    .dashboard-col:nth-child(2) {
         display: flex;
         width: 50%;
     }
     
-    main .col:nth-child(2) .row:nth-child(1) {
+    .dashboard-col:nth-child(2) .row:nth-child(1) {
     }
     
-    main .col:nth-child(2) .row:nth-child(2) {
+    .dashboard-col:nth-child(2) .row:nth-child(2) {
     }
 
     .slide-img {
@@ -129,42 +146,53 @@ main .col:nth-child(2) .row:nth-child(2) {
 
 @media (min-width: 768px) {
 
-    main {
+ 
+    .dashboard {
         overflow: hidden;
     }
 
-    main .col:nth-child(1) {
+    /* COL 1 */
+
+    .dashboard-col:nth-child(1) {
         width: 45%;
     }
+    /* END COL 1 */
     
     /* COL 2 */
-    main .col:nth-child(2) {
-        width: 30%;
+    .dashboard-col:nth-child(2) {
+        width: 27%;
     }
-
     /* END COL 2 */
-    
-    main .col:nth-child(3) {
+
+    /* COL 3 */
+    .dashboard-col:nth-child(3) {
         display: flex;
-        width: 25%;
+        width: 28%;
     }
 
-    main .col:nth-child(3) .msg {
+    .dashboard-col:nth-child(3) .msg {
         -webkit-text-stroke: 1px #000000;
         padding: 0 4px;
         background-color:rgba(255,255,255,0.2);
         font-size: 1.2em;
     }
 
-    main .col:nth-child(3) > * {
+    .dashboard-col:nth-child(3) > * {
         flex-basis: 33%;
     }
+
+    /* volume control doesnt work when video player is too small */
+    .kobe-widget {
+        min-width: 370px;
+    }
+
+
+    /* END COL 3 */
 
 
 }
 
 @media (min-width: 1024px) {
-
 }
 
 @media (min-width: 1280px) {

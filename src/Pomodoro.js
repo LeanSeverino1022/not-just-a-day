@@ -3,28 +3,32 @@ import React, { useState, useEffect, useRef } from 'react'
 
 export default function Pomodoro() {
 
-    const startingMinutes = .150; //50 minutes
+    const startingMinutes = 30; //50 minutes
 
     let [totalSeconds, setTotalSeconds] = useState(startingMinutes * 60);
     let [timerUi, setTimerUI] = useState(null);
-    let [isTimerRunning, setIsTimerRunning] = useState(false);
+    let [runTimer, setRunTimer] = useState(false); // value determines whether to run or stop time
+    let [isTimerPaused, setIsTimerPaused] = useState(false); //just a status
     const audioTimerRef = useRef(null);
 
 
     function startTimer() {
 
-        if (!isTimerRunning) {
-            setIsTimerRunning(true);
+        if (!runTimer) {
+            setRunTimer(true);
         }
     }
 
     function resetTimer() {
-        pauseTimer();
         setTotalSeconds(startingMinutes * 60);
+        setIsTimerPaused(false);
+        setRunTimer(false);
+
     }
 
     function pauseTimer() {
-        setIsTimerRunning(false);
+        setIsTimerPaused(true);
+        setRunTimer(false);
     }
 
     /**
@@ -60,9 +64,9 @@ export default function Pomodoro() {
     }
 
     useEffect(() => {
-        const interval = isTimerRunning && setInterval(continueCountdown, 1000);
+        const interval = runTimer && setInterval(continueCountdown, 1000);
         return () => clearInterval(interval);
-    }, [isTimerRunning])
+    }, [runTimer])
 
 
     useEffect(() => {
@@ -89,18 +93,27 @@ export default function Pomodoro() {
     return (
         <div>
             <div className="flex text-center flex-wrap">
-                <div className="flex-grow flex flex-col w-full">
-                    <p className="py-2 text-red-200">Time to work!</p>
+                <div className="flex-grow flex flex-col w-full test-white">
+                    <p className="py-2 text-red-500">Time to work!</p>
                     <p className="text-6xl">{timerUi}</p>
 
-                    <div>
-                        {isTimerRunning ? (
-                            <button onClick={resetTimer} className="bg-white hover:bg-gray-100 text-black inline-block mx-auto mb-2 py-1 px-2">Reset</button>
+                        {runTimer ? (
+                            <div className="mb-2">
+                                <button onClick={pauseTimer} className="bg-green-700 hover:bg-green-500 inline-block py-1 px-2">Pause</button>
+                                <button onClick={resetTimer} className="bg-red-700 hover:bg-red-500 inline-block mx-auto mb-2 py-1 px-2 ml-2" >restart</button>
+                               
+                            </div>
+
                         ) : (
-                                <button onClick={startTimer} className="bg-white hover:bg-gray-100 text-black inline-block mx-auto mb-2 py-1 px-2" >Start</button>
+                            <div className="mb-2">
+                                <button onClick={startTimer} className="bg-green-700 hover:bg-green-500 inline-block mx-auto mb-2 py-1 px-2" > {isTimerPaused ? 'Resume' : 'Start'}</button>
+                               
+
+                            </div>
                             )}
+
+
                         {/* <button className="inline-block ml-2" onClick={pauseTimer}>Pause</button> */}
-                    </div>
                 </div>
 
                 {/* Todo: display when functionality is  already good */}

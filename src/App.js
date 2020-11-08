@@ -172,7 +172,7 @@ function App() {
           <div className="dashboard-col flex flex-col">
 
             {/* row pomodor */}
-            <div className="row flex flex-col justify-center border-white" style={{ background: "#e85d5d" }} >
+            <div className="row flex flex-col justify-center border-white" style={{ background: "rgb(32 9 77)" }} >
               <Pomodoro />
             </div>
             

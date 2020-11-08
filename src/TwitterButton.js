@@ -10,7 +10,7 @@ export default function TwitterButton() {
 
         <div className="block text-center">
           
-            <a href="https://twitter.com/intent/tweet?hashtags=dayatatime&original_referer=http%3A%2F%2Flocalhost%3A3003%2Fnot-just-a-day&ref_src=twsrc%5Etfw&text=Day%20of%20%23100DaysOfCode%2C%20%0A%20Today&tw_p=tweetbutton&url=https%3A%2F%2Fleanseverino1022.github.io%2Fnot-just-a-day%2F">  <img class="twitter-logo"src={twitterLogo}/> #100DaysOfCode</a></div>
+            <a href="https://twitter.com/intent/tweet?hashtags=dayatatime&original_referer=http%3A%2F%2Flocalhost%3A3003%2Fnot-just-a-day&ref_src=twsrc%5Etfw&text=Day%20of%20%23100DaysOfCode%2C%20%0A%20Today&tw_p=tweetbutton&url=https%3A%2F%2Fleanseverino1022.github.io%2Fnot-just-a-day%2F">  <img class="twitter-logo"src={twitterLogo}/>Tweet #100DaysOfCode</a></div>
     //      <a className="twitter-share-button"
     //         href="https://twitter.com/intent/tweet"
     //         data-size="large"

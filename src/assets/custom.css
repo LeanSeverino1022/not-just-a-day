@@ -100,10 +100,13 @@ body {
     background: #2fa2bc;
 }
 
+.hundred-days-widget a{
+    overflow-wrap: break-word;
+    font-size: .8rem;
+}
+
 .twitter-logo {
-    display: inline;
-    width: 50px;
-    vertical-align: middle;
+    display: none;
 }
 
 @media (min-width: 640px) {
@@ -146,6 +149,17 @@ body {
 
 @media (min-width: 768px) {
 
+    /* header 100days widget */
+    .hundred-days-widget a {
+        font-size: 1rem;
+    }
+    
+    .twitter-logo  {
+        display: inline-block;
+        margin: 0 auto 10px;
+        width: 50px;
+        vertical-align: middle;
+    }
  
     .dashboard {
         overflow: hidden;

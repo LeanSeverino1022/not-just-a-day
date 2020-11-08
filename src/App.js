@@ -17,6 +17,17 @@ import imageFam0 from './assets/images/dashboard_slide/img_0.jpg';
 import imageFam1 from './assets/images/dashboard_slide/img_1.jpg';
 import imageFam2 from './assets/images/dashboard_slide/img_2.jpg';
 import imageFam3 from './assets/images/dashboard_slide/img_3.jpg';
+
+import imageFam4 from './assets/images/dashboard_slide/img_4.jpg';
+import imageFam5 from './assets/images/dashboard_slide/img_5.jpg';
+import imageFam6 from './assets/images/dashboard_slide/img_6.jpg';
+import imageFam7 from './assets/images/dashboard_slide/img_7.jpg';
+
+import imageFam8 from './assets/images/dashboard_slide/img_8.jpg';
+import imageFam9 from './assets/images/dashboard_slide/img_9.jpg';
+import imageFam10 from './assets/images/dashboard_slide/img_10.jpg';
+
+
 import imageKobe from './assets/images/mamba-out.jpg';
 import imageMaki from './assets/images/maki-me.jpg';
 
@@ -38,8 +49,8 @@ function App() {
   const [todos, setTodos] = useState(todosData);
 
   //image shuffler
-  const [slideImgs, setSlideImg] =  useState([imageFam0, imageFam1, imageFam2, imageFam3]);
-  const [slideIndex, setSlideIndex] = useState(2);
+  const [slideImgs, setSlideImg] =  useState([imageFam0, imageFam1, imageFam2, imageFam3, imageFam4, imageFam5, imageFam6, imageFam7, imageFam8,imageFam9,imageFam10]);
+  const [slideIndex, setSlideIndex] = useState(0);
 
 
   const todoNameRef = useRef(null);

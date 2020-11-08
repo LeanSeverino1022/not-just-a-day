@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+
 
 export default function Pomodoro() {
 
-    const startingMinutes = .15;
+    const startingMinutes = .150; //50 minutes
 
     let [totalSeconds, setTotalSeconds] = useState(startingMinutes * 60);
     let [timerUi, setTimerUI] = useState(null);
     let [isTimerRunning, setIsTimerRunning] = useState(false);
+    const audioTimerRef = useRef(null);
 
 
     function startTimer() {
@@ -17,12 +19,11 @@ export default function Pomodoro() {
     }
 
     function resetTimer() {
-        stopTimer();
+        pauseTimer();
         setTotalSeconds(startingMinutes * 60);
-        alert('reset')
     }
 
-    function stopTimer() {
+    function pauseTimer() {
         setIsTimerRunning(false);
     }
 
@@ -41,7 +42,8 @@ export default function Pomodoro() {
     function continueCountdown() {
 
         if (totalSeconds < 1) {
-            alert("TIMES UP");
+            playTimeHasEnded();
+
             resetTimer();
             return;
         }
@@ -49,33 +51,60 @@ export default function Pomodoro() {
         setTotalSeconds(--totalSeconds);
     }
 
+    function playTimeHasEnded(){
+        audioTimerRef.current.play();
+    }
 
-    useEffect(_ => {
+    function showTimesUpMsg() {
+        alert("times up");
+    }
+
+    useEffect(() => {
         const interval = isTimerRunning && setInterval(continueCountdown, 1000);
         return () => clearInterval(interval);
     }, [isTimerRunning])
 
 
-    useEffect(_ => {
+    useEffect(() => {
         const time = convertSecondsToMinutesSecondsText(totalSeconds)
         setTimerUI(time);
     }, [totalSeconds])
 
 
+    // add eventlistener to audio element... not sure about implementation yet re add and remove eventlistener but this seems to work
+    // kept the code just because its more of a keep for reference reason
+    useEffect(() => {
+
+        if(audioTimerRef) {
+            audioTimerRef.current.addEventListener("ended", showTimesUpMsg);
+        }
+      
+
+        return () => {
+            if(audioTimerRef)
+            audioTimerRef.current.removeEventListener("ended", showTimesUpMsg);
+        }
+    }, [])
+
     return (
         <div>
             <div className="flex text-center flex-wrap">
                 <div className="flex-grow flex flex-col w-full">
-                    <p className="py-2">Time to work!</p>
+                    <p className="py-2 text-red-200">Time to work!</p>
                     <p className="text-6xl">{timerUi}</p>
-                    {isTimerRunning ? (
-                        <button onClick={resetTimer} className="bg-white hover:bg-gray-100 text-black inline-block mx-auto mb-2 py-1 px-2">Reset</button>
-                    ) : (
-                            <button onClick={startTimer} className="bg-white hover:bg-gray-100 text-black inline-block mx-auto mb-2 py-1 px-2" >Start</button>
-                        )}
+
+                    <div>
+                        {isTimerRunning ? (
+                            <button onClick={resetTimer} className="bg-white hover:bg-gray-100 text-black inline-block mx-auto mb-2 py-1 px-2">Reset</button>
+                        ) : (
+                                <button onClick={startTimer} className="bg-white hover:bg-gray-100 text-black inline-block mx-auto mb-2 py-1 px-2" >Start</button>
+                            )}
+                        {/* <button className="inline-block ml-2" onClick={pauseTimer}>Pause</button> */}
+                    </div>
                 </div>
 
-                <div className="flex-grow flex flex-col">
+                {/* Todo: display when functionality is  already good */}
+                {/* <div className="flex-grow flex flex-col">
                     <p>Cycles</p>
                     <p>0</p>
                     <button>Reset</button>
@@ -85,7 +114,11 @@ export default function Pomodoro() {
                     <p>Break</p>
                     <p>5:00</p>
                     <button>Start</button>
-                </div>
+                </div> */}
+                <audio ref={audioTimerRef} className="audio-timer-done">
+                    {/* <source src="https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"></source> */}
+                    <source src="https://www.online-timer.net/audio/dingding.wav"></source>
+                </audio>
             </div>
         </div>
     )

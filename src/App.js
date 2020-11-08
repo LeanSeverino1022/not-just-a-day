@@ -172,12 +172,12 @@ function App() {
           <div className="dashboard-col flex flex-col">
 
             {/* row pomodor */}
-            <div className="row flex flex-col justify-center border-white mr-1 mb-1" >
+            <div className="row flex flex-col justify-center border-white" style={{ background: "#e85d5d" }} >
               <Pomodoro />
             </div>
             
             {/* row image shuff */}
-            <div className="row flex-grow border  border-white mr-1 mb-1" >
+            <div className="row flex-grow border  border-white" >
               <div class="flex flex-col" style={{height: '100%'}}>
                 {/* todo... make a component */}
                 <img class="slide-img flex-grow" alt="fam img" src={slideImgs[slideIndex]}/>

@@ -33,10 +33,10 @@ export default function HeaderButtons() {
                 <TwitterButton />
             </div>
 
-            <div className="headerBtn text-center w-1/5">Test 1</div>
-            <div className="headerBtn text-center w-1/5">Test 2</div>
-            <div className="headerBtn text-center w-1/5">Test 3</div>
-            <div className="headerBtn text-center w-1/5">Test 2</div>
+            <div className="headerBtn text-center w-1/5">❔</div>
+            <div className="headerBtn text-center w-1/5">❔</div>
+            <div className="headerBtn text-center w-1/5">❔</div>
+            <div className="headerBtn text-center w-1/5">❔</div>
 
 
         </div>

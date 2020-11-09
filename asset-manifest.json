@@ -1,23 +1,35 @@
 {
   "files": {
-    "main.css": "/not-just-a-day/static/css/main.8a310118.chunk.css",
-    "main.js": "/not-just-a-day/static/js/main.39ff29e9.chunk.js",
-    "main.js.map": "/not-just-a-day/static/js/main.39ff29e9.chunk.js.map",
+    "main.css": "/not-just-a-day/static/css/main.050e5940.chunk.css",
+    "main.js": "/not-just-a-day/static/js/main.792a05be.chunk.js",
+    "main.js.map": "/not-just-a-day/static/js/main.792a05be.chunk.js.map",
     "runtime-main.js": "/not-just-a-day/static/js/runtime-main.6e2106f5.js",
     "runtime-main.js.map": "/not-just-a-day/static/js/runtime-main.6e2106f5.js.map",
-    "static/js/2.347705d0.chunk.js": "/not-just-a-day/static/js/2.347705d0.chunk.js",
-    "static/js/2.347705d0.chunk.js.map": "/not-just-a-day/static/js/2.347705d0.chunk.js.map",
+    "static/js/2.bd5b1163.chunk.js": "/not-just-a-day/static/js/2.bd5b1163.chunk.js",
+    "static/js/2.bd5b1163.chunk.js.map": "/not-just-a-day/static/js/2.bd5b1163.chunk.js.map",
     "index.html": "/not-just-a-day/index.html",
-    "precache-manifest.d39aacfb6c0da684be025f78bf918407.js": "/not-just-a-day/precache-manifest.d39aacfb6c0da684be025f78bf918407.js",
+    "precache-manifest.c4a60d98e3374d5888fc7aaad9f774b4.js": "/not-just-a-day/precache-manifest.c4a60d98e3374d5888fc7aaad9f774b4.js",
     "service-worker.js": "/not-just-a-day/service-worker.js",
-    "static/css/main.8a310118.chunk.css.map": "/not-just-a-day/static/css/main.8a310118.chunk.css.map",
-    "static/js/2.347705d0.chunk.js.LICENSE.txt": "/not-just-a-day/static/js/2.347705d0.chunk.js.LICENSE.txt",
-    "static/media/custom.css": "/not-just-a-day/static/media/bg-image.f94cfda9.png"
+    "static/css/main.050e5940.chunk.css.map": "/not-just-a-day/static/css/main.050e5940.chunk.css.map",
+    "static/js/2.bd5b1163.chunk.js.LICENSE.txt": "/not-just-a-day/static/js/2.bd5b1163.chunk.js.LICENSE.txt",
+    "static/media/img_0.jpg": "/not-just-a-day/static/media/img_0.a200551e.jpg",
+    "static/media/img_1.jpg": "/not-just-a-day/static/media/img_1.2d87cc5c.jpg",
+    "static/media/img_10.jpg": "/not-just-a-day/static/media/img_10.104ebf96.jpg",
+    "static/media/img_2.jpg": "/not-just-a-day/static/media/img_2.88985da5.jpg",
+    "static/media/img_3.jpg": "/not-just-a-day/static/media/img_3.de460459.jpg",
+    "static/media/img_4.jpg": "/not-just-a-day/static/media/img_4.f33f180a.jpg",
+    "static/media/img_5.jpg": "/not-just-a-day/static/media/img_5.4f4e075e.jpg",
+    "static/media/img_6.jpg": "/not-just-a-day/static/media/img_6.8d2a994d.jpg",
+    "static/media/img_7.jpg": "/not-just-a-day/static/media/img_7.74079ba3.jpg",
+    "static/media/img_8.jpg": "/not-just-a-day/static/media/img_8.2fe321f1.jpg",
+    "static/media/img_9.jpg": "/not-just-a-day/static/media/img_9.9c8338f2.jpg",
+    "static/media/maki-me.jpg": "/not-just-a-day/static/media/maki-me.fc28ff28.jpg",
+    "static/media/twitter.webp": "/not-just-a-day/static/media/twitter.17217b0d.webp"
   },
   "entrypoints": [
     "static/js/runtime-main.6e2106f5.js",
-    "static/js/2.347705d0.chunk.js",
-    "static/css/main.8a310118.chunk.css",
-    "static/js/main.39ff29e9.chunk.js"
+    "static/js/2.bd5b1163.chunk.js",
+    "static/css/main.050e5940.chunk.css",
+    "static/js/main.792a05be.chunk.js"
   ]
 }

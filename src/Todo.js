@@ -3,18 +3,17 @@ import { Draggable } from "react-beautiful-dnd";
 
 function Todo({todo, toggleTodo, order, index}) {
 
-    const taskPriorityUI =  order <= 2 ? <span className="p-1 text-red-900 ml-auto" role="img">❗❗❗</span> : "";
-
+    const priorityTaskUI =  order <= 2 ? "bg-red-900" : "bg-gray-800";
 
     const getItemStyle = (isDragging) => ({
         // some basic styles to make the items look a bit nicer
-        userSelect: "none",
-        // padding: 8 * 2,
-        // margin: `0 0 ${8}px 0`,
-        border: 'red 2px solid',
-
+        userSelect: 'none',
+        padding: '8px',
+        marginBottom: '8px',
+        border: '1px soli #b1b0a2',
+     
         // change background colour if dragging
-        background: isDragging ? "lightgreen" : "grey",
+        transform: isDragging ? "skewY(.8deg)" : null,
     });
 
 
@@ -35,10 +34,9 @@ function Todo({todo, toggleTodo, order, index}) {
                         style={getItemStyle(
                             snapshot.isDragging
                         )}
-                        className="flex items-center ">
+                        className={`flex items-center ${priorityTaskUI}`}>
                         <input type="checkbox" checked={todo.complete} onChange={handleTodoStatus} />
-                        <span className="text-2xl ml-2">{todo.name}</span>
-                        {taskPriorityUI}
+                        <span className="ml-2">{todo.name}</span>
                     </label>
                 </div>
             )}    

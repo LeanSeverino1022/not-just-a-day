@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import todosData from './data';
+// import todosData from './data'; disable for now because of drag and drop issues on initial data
 
 // widgets
 import TodoList from './TodoList';
@@ -46,7 +46,7 @@ const reorder = (list, startIndex, endIndex) => {
 
 function App() {
   //set todos from data.js
-  const [todos, setTodos] = useState(todosData);
+  const [todos, setTodos] = useState([]);
 
   //image shuffler
   const [slideImgs, setSlideImg] =  useState([imageFam0, imageFam1, imageFam2, imageFam3, imageFam4, imageFam5, imageFam6, imageFam7, imageFam8,imageFam9,imageFam10]);
@@ -163,7 +163,7 @@ function App() {
               <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="list">
                   {(provided) => (
-                    <div style={{border:"red 2px solid"}} ref={provided.innerRef} {...provided.droppableProps}>
+                    <div ref={provided.innerRef} {...provided.droppableProps}>
                       <TodoList todos={todos} toggleTodo={toggleTodo} />
                       {provided.placeholder}
                     </div>

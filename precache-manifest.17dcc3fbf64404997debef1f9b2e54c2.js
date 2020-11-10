@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a9b9bc88d16472da526fbbfa08f5badb",
+    "revision": "12e7cdfce12e0593511b2d4b4525fd81",
     "url": "/not-just-a-day/index.html"
   },
   {
-    "revision": "16285118b0481a83e07d",
+    "revision": "175514247f8b64e57e69",
     "url": "/not-just-a-day/static/css/main.e4a2619e.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/not-just-a-day/static/js/2.bd5b1163.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "16285118b0481a83e07d",
-    "url": "/not-just-a-day/static/js/main.3cadab79.chunk.js"
+    "revision": "175514247f8b64e57e69",
+    "url": "/not-just-a-day/static/js/main.6763c27c.chunk.js"
   },
   {
     "revision": "c2c48d5c61bc2d3f437b",

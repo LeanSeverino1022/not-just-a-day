@@ -35,7 +35,7 @@ export default function HeaderWidgets() {
     }
 
     return (
-        <div className="flex">
+        <div className="flex header-widgets">
             {/* buttons */}
             <div className="hundred-days-widget header-widget-block w-1/5">
                 <TwitterButton />

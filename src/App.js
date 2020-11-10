@@ -171,7 +171,7 @@ function App() {
                 </Droppable>
               </DragDropContext>
               <div className="flex mt-4 mb-8">
-                <input onKeyUp={triggerAddTodo} className="border py-2 px-3 text-grey-dark mr-2 w-full" placeholder="What essential thing you need to do?" autoFocus={true} type='text' ref={todoNameRef} />
+                <input onKeyUp={triggerAddTodo} className="border py-2 px-3 text-black mr-2 w-full" placeholder="What essential thing you need to do?" autoFocus={true} type='text' ref={todoNameRef} />
                 <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={addTodoItem}>Add</button>
               </div>
 

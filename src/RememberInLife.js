@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 // todo: add this to one of the header widgets..
-//todo: rename headerButtons to header widgets? header blocks?
 export default function RememberInLife() {
 
     const list = [

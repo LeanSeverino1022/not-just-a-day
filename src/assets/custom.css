@@ -1,10 +1,28 @@
-/* CSS VARIABLES */
+
+/*
+*  CSS TABLE OF CONTENTS
+*
+*  CSS Variables
+*  General Styles
+*  Body
+*   Header Widgets
+*   Main Dashboard Widgets
+*  Tailwind overrides
+*  
+*/
+
+
+
+
+/**** CSS VARIABLES ****/
 
 :root {
     --primary: #141414;
     --light:   #F3F3F3;
     --dark:    #686868;
-  }
+}
+
+/**** General styles ****/
 
 *,
 *::before,
@@ -12,7 +30,7 @@
   box-sizing: border-box;
 }
 
-
+/**** BODY ****/
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--primary);
@@ -26,14 +44,6 @@ body {
 }
 
 
-/* tailwind current overrides for now*/
-.bg-black {
-    background: #141414;
-}
-
-.text-white {
-    color: #eee;
-}
 
 .two-hundred-text {
     color: rgb(255, 49, 49);
@@ -42,60 +52,16 @@ body {
     font-family: Verdana;
 }
 
-/* MAIN LAYOUT */
 
-.dashboard-col:nth-child(1) {
-    width: 100%;
-}
+/**** -Header Widgets ****/
 
-.dashboard-col:nth-child(2),
-.dashboard-col:nth-child(3) {
-    display: none;
-}
-
-
-.dashboard-col:nth-child(2) .row:nth-child(1) {
-}
-
-.dashboard-col:nth-child(2) .row:nth-child(2) {
-    flex-grow: 1;
-}
-
-
-/* BY WIDGET */
-
-.todos-widget-wrapper {
-    /* overflow: auto; */
-}
-
-/* Col 3 */
-.kobe-widget {
-    background: url(../assets/images/mamba-out.jpg);
-    background-size: cover;
-}
-
-
-.kobe-widget iframe {
-    visibility: visible;
-    height: 100%;
-    width: 100%;
-}
-
-
-
-.maki-widget {
-    background: url(../assets/images/maki-me.jpg);
-    background-size: cover;
-    background-position: right 0 bottom 0;
-}
-
-
-/* Header button component*/
+/* button components */
 /* todo: figure out... should I just put it in here or inside another file just for that component */
-.headerBtn {
+.header-widget-block {
     border: 1px solid rgb(180, 180, 180);
 }
 
+/* -hundered days widget */
 .hundred-days-widget {
     background: #2fa2bc;
 }
@@ -105,29 +71,81 @@ body {
     font-size: .8rem;
 }
 
+@media (min-width: 768px) {
+    .hundred-days-widget a {
+        font-size: 1rem;
+    }
+}
+
 .twitter-logo {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .twitter-logo  {
+        display: inline-block;
+        margin: 0 auto 10px;
+        width: 50px;
+        vertical-align: middle;
+    }
+}
+/* End -hundred days widget */
+
+/**** -Main Dashboard widgets ****/
+
+@media (min-width: 768px) {
+    .dashboard {
+        overflow: hidden;
+    }
+}
+
+/* Main Layout columns 1-3 Layout*/
+.dashboard-col:nth-child(1) {
+    width: 100%;
+}
+
+.dashboard-col:nth-child(2),
+.dashboard-col:nth-child(3) {
     display: none;
 }
 
 @media (min-width: 640px) {
 
-    /* col 1 todolist */
     .dashboard-col:nth-child(1) {
         width: 50%;
     }
     
-    /* COL 2 */
     .dashboard-col:nth-child(2) {
         display: flex;
         width: 50%;
     }
+}
+
+/* main dashboard column-1 rows*/
+@media (min-width: 768px) {
     
-    .dashboard-col:nth-child(2) .row:nth-child(1) {
+    .dashboard-col:nth-child(1) {
+        width: 45%;
     }
     
-    .dashboard-col:nth-child(2) .row:nth-child(2) {
+    .dashboard-col:nth-child(2) {
+        width: 27%;
     }
 
+    .dashboard-col:nth-child(3) {
+        display: flex;
+        width: 28%;
+    }
+}
+
+/* main dashboard column-2 rows*/
+
+.dashboard-col:nth-child(2) .row:nth-child(2) {
+    flex-grow: 1;
+}
+
+@media (min-width: 640px) {
+  
     .slide-img {
         /* height: 90%;
         max-height: 220px; */
@@ -139,76 +157,60 @@ body {
     .slide-next-btn {
         height: 100px;
     }
+}
 
-    /* END COL 2 */
-    
-    
-    
-  
+/* Main dashboard column-3 rows */
+.kobe-widget {
+    background: url(../assets/images/mamba-out.jpg);
+    background-size: cover;
 }
 
 @media (min-width: 768px) {
+    /* volume control doesnt work when video player is too small */
+    .kobe-widget {
+        min-width: 370px;
+    }
+}
 
-    /* header 100days widget */
-    .hundred-days-widget a {
-        font-size: 1rem;
-    }
-    
-    .twitter-logo  {
-        display: inline-block;
-        margin: 0 auto 10px;
-        width: 50px;
-        vertical-align: middle;
-    }
- 
-    .dashboard {
-        overflow: hidden;
-    }
 
-    /* COL 1 */
+.kobe-widget iframe {
+    visibility: visible;
+    height: 100%;
+    width: 100%;
+}
 
-    .dashboard-col:nth-child(1) {
-        width: 45%;
-    }
-    /* END COL 1 */
-    
-    /* COL 2 */
-    .dashboard-col:nth-child(2) {
-        width: 27%;
-    }
-    /* END COL 2 */
 
-    /* COL 3 */
-    .dashboard-col:nth-child(3) {
-        display: flex;
-        width: 28%;
-    }
+.maki-widget {
+    background: url(../assets/images/maki-me.jpg);
+    background-size: cover;
+    background-position: right 0 bottom 0;
+}
+
+
+
+@media (min-width: 768px) {
 
     .dashboard-col:nth-child(3) .msg {
         -webkit-text-stroke: 1px #000000;
         padding: 0 4px;
         background-color:rgba(255,255,255,0.2);
         font-size: 1.2em;
+        border: 3px solid yellow;
     }
 
     .dashboard-col:nth-child(3) > * {
         flex-basis: 33%;
     }
 
-    /* volume control doesnt work when video player is too small */
-    .kobe-widget {
-        min-width: 370px;
-    }
-
-
-    /* END COL 3 */
-
-
 }
 
-@media (min-width: 1024px) {
+
+/* todo: see later if this is the best way */
+/****  Tailwind overrides  ****/
+.bg-black {
+    background: #141414;
 }
 
-@media (min-width: 1280px) {
-
+.text-white {
+    color: #eee;
 }

@@ -9,7 +9,7 @@ import imgUnderConstruction from './assets/images/under_construction.png';
 
 
 
-export default function HeaderButtons() {
+export default function HeaderWidgets() {
     // eval("debugger;")
 
     const hiddenTwitterBtnRef = React.useRef(null);
@@ -37,15 +37,15 @@ export default function HeaderButtons() {
     return (
         <div className="flex">
             {/* buttons */}
-            <div className="hundred-days-widget headerBtn w-1/5">
+            <div className="hundred-days-widget header-widget-block w-1/5">
                 <TwitterButton />
             </div>
 
-            {/* <div className="headerBtn text-center w-1/5"><Damn></Damn></div> */}
-            <div className="headerBtn text-center w-1/5"><img class="mx-auto" src={imgUnderConstruction}/></div>
-            <div className="headerBtn text-center w-1/5"><img class="mx-auto" src={imgUnderConstruction}/></div>
-            <div className="headerBtn text-center w-1/5"><img class="mx-auto" src={imgUnderConstruction}/></div>
-            <div className="headerBtn text-center w-1/5"><img class="mx-auto" src={imgUnderConstruction}/></div>
+            {/* <div className="header-widget-block text-center w-1/5"><Damn></Damn></div> */}
+            <div className="header-widget-block text-center w-1/5"><img class="mx-auto" src={imgUnderConstruction}/></div>
+            <div className="header-widget-block text-center w-1/5"><img class="mx-auto" src={imgUnderConstruction}/></div>
+            <div className="header-widget-block text-center w-1/5"><img class="mx-auto" src={imgUnderConstruction}/></div>
+            <div className="header-widget-block text-center w-1/5"><img class="mx-auto" src={imgUnderConstruction}/></div>
 
 
         </div>

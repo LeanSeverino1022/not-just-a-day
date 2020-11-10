@@ -3,7 +3,7 @@ import todosData from './data';
 
 // widgets
 import TodoList from './TodoList';
-import HeaderButtons from './HeaderButtons';
+import HeaderWidgets from './HeaderWidgets';
 import Pomodoro from './Pomodoro';
 
 
@@ -151,7 +151,7 @@ function App() {
 
         {/* top row */}
         <div className="w-full">
-          <HeaderButtons />
+          <HeaderWidgets />
         </div>
 
 

@@ -6,12 +6,12 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import React, { useState, useRef, useEffect, Component } from 'react';
 import TodoList from './TodoList';
 import todosData from './data';
-import HeaderButtons from './HeaderButtons';
+import HeaderWidgets from './HeaderWidgets';
 import Pomodoro from './Pomodoro';
 import { v4 as uuidv4 } from 'uuid';
 
 const initial = Array.from({ length: 10 }, (v, k) => k).map((k) => {
-  const custom: Quote = {
+  const custom = {
     id: `id-${k}`,
     content: `Quote ${k}`
   };

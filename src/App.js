@@ -63,6 +63,9 @@ function App() {
     //if we have todos in our localstorage then use it to replace todosData we set initially
     if (storedTodos) setTodos(storedTodos);
 
+    //just set document title
+    document.title = "Not Just A Day"
+
   }, [])
 
   //when something changes, do something
